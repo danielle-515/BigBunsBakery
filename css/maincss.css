@@ -9,6 +9,31 @@ img
     width: auto;
 }
 
+ .button {
+    border: 2px solid gray;
+    border-radius: 8px;
+    padding: 2px;
+    color: black;
+    text-align: center;
+    display: inline-block;
+    font-size: 36px;
+    margin-bottom: 8px;
+    cursor: pointer;
+}
+
+.CartButton {
+    float: right;
+    margin-top: 75px;
+    margin-right: 10px;
+    border: 2px solid black;
+    border-radius: 8px;
+    padding: 2px;
+    color: black;
+    font-size: 36px;
+    margin-bottom: 8px;
+    cursor: pointer;
+}
+
 
 #sidebar
 {
