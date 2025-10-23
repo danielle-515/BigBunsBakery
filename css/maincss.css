@@ -3,6 +3,11 @@
     background-color: #dfc7ba
 }
 
+img
+{
+    height: 70px;
+    width: auto;
+}
 
 
 #sidebar
