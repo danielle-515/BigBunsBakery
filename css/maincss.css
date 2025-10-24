@@ -9,7 +9,7 @@ img
     width: auto;
 }
 
- .button {
+.button {
     border: 2px solid gray;
     border-radius: 8px;
     padding: 2px;
@@ -37,5 +37,10 @@ img
 
 #sidebar
 {
-    /*color: red;*/
+    float: right;
+    width: 255px;
+    height: 800px;
+    padding-left: 30px;
+    border-left: 2px solid rgb(222, 180, 150);
+    padding-right: 10px;
 }
