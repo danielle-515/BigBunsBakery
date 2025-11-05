@@ -8,19 +8,22 @@
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     float: right;
     width: 255px;
-    height: auto;
+    height: 500px;
     padding-left: 30px;
     border-left: 2px solid rgb(222, 180, 150);
     padding-right: 10px;
+    margin-left: 20px;
+    font-size: 16px;
 }
 
 #container
 {
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-
+    font-size: 18px;
     padding: 20px;
     border: 1px solid rgb(222, 180, 150);
 }
+
 
 /*img
 {
@@ -28,11 +31,16 @@
     width: auto;
 }*/
 
-#testpic
+#promotionpic
 {
-    height: 7px;
-    width: auto;
-    background-color: black;
+    float: right;
+    padding-right: 5px;
+}
+
+#promotiontext
+{
+    float: left;
+    width: 50%;
 }
 
 .button {
