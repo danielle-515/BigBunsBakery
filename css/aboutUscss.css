@@ -18,22 +18,29 @@
 
 #header
 {
-    background-color: #dfc7ba;
+    background-color: rgba(251, 239, 225)
 }
 
+#navbar
+{
+    float: center;
+    padding-left: 35%;
+    background-color: rgb(251, 239, 225);
+}
 
 
 
 .button 
 {
     border: 1px solid gray;
+    background-color: #dfc7ba;
     border-radius: 8px;
-    padding: 2px;
+    padding: 5px;
     color: black;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     text-align: center;
     display: inline-block;
-    font-size: 20px;
+    font-size: 30px;
     margin-bottom: 8px;
     cursor: pointer;
 }
