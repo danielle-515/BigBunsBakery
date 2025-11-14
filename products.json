@@ -1,0 +1,64 @@
+[
+    {
+        "id": 1,
+        "name": "Snickerdoodle Cookie",
+        "price": 0.99,
+        "image": "pictures/cookie.jpeg"
+    },
+
+    {
+        "id": 2,
+        "name": "Sugar Cookie",
+        "price": 0.99,
+        "image": "pictures/sugarcookie.jpeg"
+    },
+
+    {
+        "id": 3,
+        "name": "Dark Chocolate Cookie",
+        "price": 0.99,
+        "image": "pictures/darkchocoaltecookie.jpeg"
+    },
+
+    {
+        "id": 4,
+        "name": "Almond Bread",
+        "price": 1.99,
+        "image": "pictures/almondbread.jpeg"
+    },
+
+    {
+        "id": 5,
+        "name": "Chocolate Crossiant",
+        "price": 1.99,
+        "image": "pictures/choccrassant.jpeg"
+    },
+
+    {
+        "id": 6,
+        "name": "Crossiant",
+        "price": 1.99,
+        "image": "pictures/crosant.jpeg"
+    },
+
+    {
+        "id": 7,
+        "name": "Pecan Pie",
+        "price": 1.50,
+        "image": "pictures/pecanpie.jpeg"
+    },
+
+    {
+        "id": 8,
+        "name": "Coconut Pie",
+        "price": 1.50,
+        "image": "pictures/whitepie.jpeg"
+    },
+
+    {
+        "id": 9,
+        "name": "New Pie",
+        "price": 100000,
+        "image": "pictures/cookie.jpeg"
+    }
+]
