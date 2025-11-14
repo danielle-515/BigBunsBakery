@@ -10,6 +10,25 @@
     background-color: rgb(251, 239, 225);
 }
 
+#sidebar
+{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    width: auto;
+    height: auto;
+    float: right;
+    background-color:  #f7e6dd;
+    padding-left: 30px;
+    border-left: 2px solid rgb(222, 180, 150);
+    padding-right: 10px;
+    margin-left: 20px;
+    font-size: 16px;
+}
+
+#container
+{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    float: left;
+}
 
 
 .button 
