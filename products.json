@@ -17,7 +17,7 @@
         "id": 3,
         "name": "Dark Chocolate Cookie",
         "price": 0.99,
-        "image": "pictures/darkchocoaltecookie.jpeg"
+        "image": "pictures/darkchocolatecookie.jpeg"
     },
 
     {
@@ -31,7 +31,7 @@
         "id": 5,
         "name": "Chocolate Crossiant",
         "price": 1.99,
-        "image": "pictures/choccrassant.jpeg"
+        "image": "pictures/choccrossant.jpeg"
     },
 
     {
