@@ -44,21 +44,21 @@
     {
         "id": 7,
         "name": "Pecan Pie",
-        "price": 1.50,
+        "price": 1.49,
         "image": "pictures/pecanpie.jpeg"
     },
 
     {
         "id": 8,
         "name": "Coconut Pie",
-        "price": 1.50,
+        "price": 1.49,
         "image": "pictures/whitepie.jpeg"
     },
 
     {
         "id": 9,
         "name": "New Pie",
-        "price": 100000,
+        "price": "100,000",
         "image": "pictures/cookie.jpeg"
     }
 ]
