@@ -16,7 +16,11 @@ iconCart.addEventListener('click',() =>{
 
 const addDataToHTML = () => {
 
+    if(listProductHTML)
+    {
     listProductHTML.innerHTML = '';
+    console.log("ooeoeoe");
+    }
 
     if(listProducts.length > 0){
 
@@ -38,6 +42,9 @@ const addDataToHTML = () => {
     }
 
 }
+
+if(listProductHTML)
+{
     listProductHTML.addEventListener('click', (event) => {
         let positionClick = event.target;
         if(positionClick.classList.contains('add-to-cart')){
@@ -45,6 +52,8 @@ const addDataToHTML = () => {
             addToCart(product_id);
         }
     })
+}
+    
 
 const addToCart = (product_id) => 
     {
@@ -76,7 +85,10 @@ const addCartToMemory = () => {
             localStorage.setItem('cart', JSON.stringify(cart));
         }
 
-        
+
+
+/*if(listCartHTML)
+{    
 const addCartToHTML = () => {
     listCartHTML.innerHTML = '';
     let totalQuantity = 0;
@@ -107,6 +119,46 @@ const addCartToHTML = () => {
         })
     }
     iconCartSpan.innerText = totalQuantity;
+}
+
+}
+
+*/
+const addCartToHTML = () => {
+    if(listCartHTML)
+    {
+    listCartHTML.innerHTML = '';
+    
+
+    let totalQuantity = 0;
+    if(cart.length > 0){
+        cart.forEach(item => {
+            totalQuantity = totalQuantity +  item.quantity;
+            let newItem = document.createElement('div');
+            newItem.classList.add('item');
+            newItem.dataset.id = item.product_id;
+
+            let positionProduct = products.findIndex((value) => value.id == item.product_id);
+            let info = products[positionProduct];
+            listCartHTML.appendChild(newItem);
+            newItem.innerHTML = `
+            <div class="image">
+                    <img src="${info.image}">
+                </div>
+                <div class="name">
+                ${info.name}
+                </div>
+                <div class="totalPrice">$${info.price * item.quantity}</div>
+                <div class="quantity">
+                    <span class="minus"><</span>
+                    <span>${item.quantity}</span>
+                    <span class="plus">></span>
+                </div>
+            `;
+        })
+    }
+    iconCartSpan.innerText = totalQuantity;
+}
 }
 
 
