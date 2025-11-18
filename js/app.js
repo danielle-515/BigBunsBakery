@@ -17,13 +17,13 @@ iconCart.addEventListener('click',() =>{
 
 
 const addDataToHTML = () => {
-
+    if(listProductHTML)
+    {
     console.log("ooeoeoe");
-    console.log(products);
-    if(products.length >= 0)
+    if(products.length > 0)
         {
             console.log("alalalala");
-            console.log(products);
+        
 
         products.forEach(product => {
             let newProduct = document.createElement('div');
@@ -38,10 +38,10 @@ const addDataToHTML = () => {
                 </button>
                 `;
                 listProductHTML.appendChild(newProduct);
-                console.log(newProduct);
         })
     }
-    }
+    }   
+}
 
 
 
@@ -132,11 +132,10 @@ console.log(products);
 
 const addCartToHTML = () => {
 
-    if(listCartHTML)
-    {
-    listCartHTML.innerHTML = '';
+   
+    //listCartHTML.innerHTML = '';
     console.log("cartlah");
-    }
+    
 
     let totalQuantity = 0;
     
@@ -156,12 +155,9 @@ const addCartToHTML = () => {
                 let info = products[positionProduct];
                 
                 //fix this
-                listCartHTML.appendChild(newItem);
+               // listCartHTML.appendChild(newItem);                
 
-                iconCartSpan.innerText = 100;
-                
-
-                newItem.innerHTML = `
+                /*newItem.innerHTML = `
                 <div class= "image">
                     <img src="${info.image}">
                 </div>
@@ -173,11 +169,11 @@ const addCartToHTML = () => {
                     <span class="minus"><</span>
                     <span>${item.quantity}</span>
                     <span class="plus">></span>
-                </div> `;
+                </div> `;*/
             })
     }
-    
     iconCartSpan.innerText = totalQuantity;
+    
 }
 
 
