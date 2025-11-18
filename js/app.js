@@ -1,5 +1,5 @@
 let listProducts = [];
-let cart =[];
+let carts =[];
 let products = [];
 
 
@@ -20,12 +20,10 @@ const addDataToHTML = () => {
     if(listProductHTML)
     {
     console.log("ooeoeoe");
-    if(products.length > 0)
+    if(listProducts.length > 0)
         {
             console.log("alalalala");
-        
-
-        products.forEach(product => {
+            listProducts.forEach(product => {
             let newProduct = document.createElement('div');
             newProduct.dataset.id = product.id;
             newProduct.classList.add('item');
@@ -39,6 +37,7 @@ const addDataToHTML = () => {
                 `;
                 listProductHTML.appendChild(newProduct);
         })
+        console.log(listProducts);
     }
     }   
 }
@@ -59,69 +58,73 @@ if(listProductHTML)
 
 const addToCart = (product_id) => 
     {
-        let positionThisProductInCart = cart.findIndex((value) => value.product_id == product_id);
-        if(cart.length <= 0)
+        let positionThisProductInCart = carts.findIndex((value) => value.product_id == product_id);
+        if(carts.length <= 0)
         {
-            cart = [{
+            carts = [{
                         product_id: product_id,
                         quantity: 1
                     }];
         }
         else if(positionThisProductInCart < 0)
         {
-            cart.push({
+            carts.push({
                         product_id: product_id,
                         quantity: 1
                         });
         }
         else
         {
-            cart[positionThisProductInCart].quantity= cart[positionThisProductInCart].quantity + 1;
+            carts[positionThisProductInCart].quantity= carts[positionThisProductInCart].quantity + 1;
         }
-        console.log(cart);
+        console.log(carts);
         addCartToHTML();
         addCartToMemory();
     }
 
 const addCartToMemory = () => {
-            localStorage.setItem('cart', JSON.stringify(cart));
+            localStorage.setItem('cart', JSON.stringify(carts));
         }
 
 
 
 /*if(listCartHTML)
 {    
-const addCartToHTML = () => {
-    listCartHTML.innerHTML = '';
-    let totalQuantity = 0;
-    if(cart.length > 0){
-        cart.forEach(item => {
-            totalQuantity = totalQuantity +  item.quantity;
-            let newItem = document.createElement('div');
-            newItem.classList.add('item');
-            newItem.dataset.id = item.product_id;
+    console.log("cart");
+    const addCartToHTML = () => 
+    {
+        listCartHTML.innerHTML = '';
+        let totalQuantity = 0;
+        if(carts.length > 0)
+        {
+            carts.forEach(item => 
+            {
+                totalQuantity = totalQuantity +  item.quantity;
+                let newItem = document.createElement('div');
+                newItem.classList.add('item');
+                newItem.dataset.id = item.product_id;
 
-            let positionProduct = products.findIndex((value) => value.id == item.product_id);
-            let info = products[positionProduct];
-            listCartHTML.appendChild(newItem);
-            newItem.innerHTML = `
-            <div class="image">
-                    <img src="${info.image}">
-                </div>
-                <div class="name">
-                ${info.name}
-                </div>
-                <div class="totalPrice">$${info.price * item.quantity}</div>
-                <div class="quantity">
-                    <span class="minus"><</span>
-                    <span>${item.quantity}</span>
-                    <span class="plus">></span>
-                </div>
-            `;
-        })
+                let positionProduct = products.findIndex((value) => value.id == item.product_id);
+                let info = products[positionProduct];
+                listCartHTML.appendChild(newItem);
+                newItem.innerHTML = `
+                <div class="image">
+                        <img src="${info.image}">
+                    </div>
+                    <div class="name">
+                    ${info.name}
+                    </div>
+                    <div class="totalPrice">$${info.price * item.quantity}</div>
+                    <div class="quantity">
+                        <span class="minus"><</span>
+                        <span>${item.quantity}</span>
+                        <span class="plus">></span>
+                    </div>
+                `;
+            } )
+        }
+        iconCartSpan.innerText = totalQuantity;
     }
-    iconCartSpan.innerText = totalQuantity;
-}
 
 }*/
 
@@ -132,44 +135,39 @@ console.log(products);
 
 const addCartToHTML = () => {
 
-   
-    //listCartHTML.innerHTML = '';
+    listCartHTML.innerHTML = '';
     console.log("cartlah");
     
 
     let totalQuantity = 0;
     
-    if(cart.length > 0)
+    if(carts.length > 0)
     {
-        cart.forEach(item => 
+        carts.forEach(cart => 
             {
-            
-                totalQuantity = totalQuantity +  item.quantity;
-                let newItem = document. createElement('div');
-                newItem.classList.add('item');
-                newItem.dataset.id = item.product_id;
-
-                let positionProduct = products.findIndex((value) => value.id == item.product_id);
-                
-
-                let info = products[positionProduct];
-                
-                //fix this
-               // listCartHTML.appendChild(newItem);                
-
-                /*newItem.innerHTML = `
-                <div class= "image">
-                    <img src="${info.image}">
+                totalQuantity = totalQuantity + cart.quantity;
+                let newCart = document.createElement('div');
+                let positionProduct = listProducts.findIndex((value) => value.id == cart.product_id);
+                let info = listProducts[positionProduct];
+                console.log(info);
+                newCart.classList.add('item');
+                newCart.innerHTML = `
+                <div class = "img">
+                    <img src = "${info.image}" alt = "">
                 </div>
-                <div class="name">
-                ${info.name}
+                <div class = "name">
+                    ${info.name}
                 </div>
-                <div class="totalPrice">$${info.price * item.quantity}</div>
-                <div class="quantity">
-                    <span class="minus"><</span>
-                    <span>${item.quantity}</span>
-                    <span class="plus">></span>
-                </div> `;*/
+                <div class = "totalPrice">
+                    $${info.price * cart.quantity}
+                </div>
+                <div class = "quantity"
+                    <span class = "minus"> < </span>
+                    <span>${cart.quantity}</span>
+                    <span class = "plus"> > </span>
+                </div>
+                `;
+            listCartHTML.appendChild(newCart);
             })
     }
     iconCartSpan.innerText = totalQuantity;
@@ -185,12 +183,12 @@ const initApp = () =>
     .then(response => response.json())
     .then(data =>{
         listProducts = data;
-        //console.log(listProducts);
+        console.log(listProducts);
         addDataToHTML();
    
     //get memory
     if(localStorage.getItem('cart')){
-        cart = JSON.parse(localStorage.getItem('cart'));
+        carts = JSON.parse(localStorage.getItem('cart'));
 
        addCartToHTML();
     } 

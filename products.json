@@ -58,7 +58,7 @@
     {
         "id": 9,
         "name": "New Pie",
-        "price": "100,000",
+        "price": 100000,
         "image": "pictures/cookie.jpeg"
     }
 ]
