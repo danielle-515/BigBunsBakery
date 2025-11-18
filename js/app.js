@@ -1,5 +1,6 @@
 let listProducts = [];
 let cart =[];
+let products = [];
 
 
 let listCartHTML = document.querySelector('.listCart');
@@ -14,21 +15,20 @@ iconCart.addEventListener('click',() =>{
 })
 }
 
+
 const addDataToHTML = () => {
 
-    if(listProductHTML)
-    {
-    listProductHTML.innerHTML = '';
     console.log("ooeoeoe");
-    }
+    console.log(products);
+    if(products.length >= 0)
+        {
+            console.log("alalalala");
+            console.log(products);
 
-    if(listProducts.length > 0){
-
-        listProducts.forEach(product => {
+        products.forEach(product => {
             let newProduct = document.createElement('div');
             newProduct.dataset.id = product.id;
             newProduct.classList.add('item');
-            newProduct.dataset.id = product.id;
             newProduct.innerHTML = `
                 <img src = "${product.image}" alt = "cookie">
                 <p> ${product.name} </p>
@@ -38,10 +38,12 @@ const addDataToHTML = () => {
                 </button>
                 `;
                 listProductHTML.appendChild(newProduct);
+                console.log(newProduct);
         })
     }
+    }
 
-}
+
 
 if(listProductHTML)
 {
@@ -121,28 +123,46 @@ const addCartToHTML = () => {
     iconCartSpan.innerText = totalQuantity;
 }
 
-}
+}*/
 
-*/
+
+
+console.log(products);
+
+
 const addCartToHTML = () => {
+
     if(listCartHTML)
     {
     listCartHTML.innerHTML = '';
-    
+    console.log("cartlah");
+    }
 
     let totalQuantity = 0;
-    if(cart.length > 0){
-        cart.forEach(item => {
-            totalQuantity = totalQuantity +  item.quantity;
-            let newItem = document.createElement('div');
-            newItem.classList.add('item');
-            newItem.dataset.id = item.product_id;
+    
+    if(cart.length > 0)
+    {
+        cart.forEach(item => 
+            {
+            
+                totalQuantity = totalQuantity +  item.quantity;
+                let newItem = document. createElement('div');
+                newItem.classList.add('item');
+                newItem.dataset.id = item.product_id;
 
-            let positionProduct = products.findIndex((value) => value.id == item.product_id);
-            let info = products[positionProduct];
-            listCartHTML.appendChild(newItem);
-            newItem.innerHTML = `
-            <div class="image">
+                let positionProduct = products.findIndex((value) => value.id == item.product_id);
+                
+
+                let info = products[positionProduct];
+                
+                //fix this
+                listCartHTML.appendChild(newItem);
+
+                iconCartSpan.innerText = 100;
+                
+
+                newItem.innerHTML = `
+                <div class= "image">
                     <img src="${info.image}">
                 </div>
                 <div class="name">
@@ -153,13 +173,13 @@ const addCartToHTML = () => {
                     <span class="minus"><</span>
                     <span>${item.quantity}</span>
                     <span class="plus">></span>
-                </div>
-            `;
-        })
+                </div> `;
+            })
     }
+    
     iconCartSpan.innerText = totalQuantity;
 }
-}
+
 
 
 const initApp = () => 
@@ -169,7 +189,7 @@ const initApp = () =>
     .then(response => response.json())
     .then(data =>{
         listProducts = data;
-       // console.log(listProducts);
+        //console.log(listProducts);
         addDataToHTML();
    
     //get memory
@@ -183,3 +203,5 @@ const initApp = () =>
 }
 
 initApp();
+
+
