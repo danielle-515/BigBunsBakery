@@ -207,6 +207,8 @@ let iconCartSpan = document.querySelector('.icon-cart span');
 let iconCart = document.querySelector('.icon-cart');
 let listProductHTML = document.querySelector('.listProduct');
 
+//localStorage.removeItem('cart');
+
 // go to cart page
 if (iconCart) {
     iconCart.addEventListener('click', () => {
@@ -293,6 +295,7 @@ const addCartToHTML = () => {
 
             let newCart = document.createElement('div');
             newCart.classList.add('item');
+            newCart.dataset.id = cart.product_id;
 
             newCart.innerHTML = `
                 <div class="image">
@@ -313,6 +316,54 @@ const addCartToHTML = () => {
 
     if (iconCartSpan) iconCartSpan.innerText = totalQuantity;
 };
+
+listCartHTML.addEventListener('click', (event) =>
+{
+    let positionClick = event.target;
+    if(positionClick.classList.contains('minus') || positionClick.classList.contains('plus'))
+    {
+        let product_id = positionClick.parentElement.parentElement.dataset.id;
+        console.log(product_id);
+        let type = 'minus';
+        if(positionClick.classList.contains('plus'))
+        {
+            type = 'plus';
+        }
+        changeQuantity(product_id, type);
+    }
+})
+
+//=======================
+// CHANGING QUANITITY   =
+//=======================
+
+const changeQuantity = (product_id, type) =>
+{
+    let positionItemInCart = carts.findIndex((value => value.product_id == product_id))
+    if(positionItemInCart >= 0)
+    {
+        switch(type)
+        {
+            case 'plus':
+                carts[positionItemInCart].quantity = carts[positionItemInCart].quantity +1;
+                break;
+
+            default:
+                let valueChange = carts[positionItemInCart].quantity -1;
+                if(valueChange > 0)
+                {
+                    carts[positionItemInCart].quantity = valueChange;
+                }
+                else
+                {
+                    carts.splice(positionItemInCart, 1);
+                }
+                break;
+        }
+    }
+    addCartToMemory();
+    addCartToHTML();
+}
 
 // =============================
 // INIT APP
