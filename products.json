@@ -2,21 +2,21 @@
     {
         "id": 1,
         "name": "Snickerdoodle Cookie",
-        "price": 0.99,
+        "price": 0.50,
         "image": "pictures/cookie.jpeg"
     },
 
     {
         "id": 2,
         "name": "Sugar Cookie",
-        "price": 0.99,
+        "price": 0.50,
         "image": "pictures/sugarcookie.jpeg"
     },
 
     {
         "id": 3,
         "name": "Dark Chocolate Cookie",
-        "price": 0.99,
+        "price": 0.50,
         "image": "pictures/darkchocolatecookie.jpeg"
     },
 
