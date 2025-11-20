@@ -1,0 +1,15 @@
+.stars {
+    float: left;
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.fa-star{
+    color: black;
+    font-size: 24px;
+}
+
+.fa-star:hover,
+.fa-star:hover ~ .fa-star {
+    color: gold;
+}
