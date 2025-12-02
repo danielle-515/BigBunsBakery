@@ -3,40 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style type="text/css" media="all">@import "css/reviews.css";</style>
+    <style type="text/css" media="all">@import "css/reviewpage.css";</style>
     <title>BigBunsBakery</title>
 </head>
 
 <body>
 
-<h1>User Reviews</h1>
-    <div id="user-review-form">
-        <h3>Leave a Review!</h3>
+<div id = "header">
+    <img src = pictures/bbbakery_banner.png alt = "banner" width=" 100%" class = "center" />
+</div>    
 
-        <label>Name:</label>
-        <input type="text" id="name">
+<div id = "navbar">
+    <button class="button" onclick = "document.location = 'index.html' " >Home</button>
+
+    <button class= "button" onclick = "document.location = 'menu.html' " >Menu </button>
+
+    <button class = "button" onclick = "document.location = 'aboutUs.html' ">About Us</button>
+
+   <button class="button" onclick = "document.location = 'cart.html' "> 
+        <img src = "pictures/cart.png" alt = "cart" width = "25" />
+    </button>
+</div>
+
+<div id="container">
+    <h1>User Reviews</h1>
+        <div id="user-review-form">
+            <h3>Leave a Review!</h3>
+
+            <label>Name:</label> <br>
+            <input type="text" id="name">
+
+            <br><br>
+
+            <label>Review:</label> <br>
+            <textarea id="review-text"></textarea>
+
+            <br><button onclick="addReview()">Submit Review</button>
+        </div>
+
+        <div class="stars">
+            <span class="fa fa-star star1"></span>
+            <span class="fa fa-star star2"></span>
+            <span class="fa fa-star star3"></span>
+            <span class="fa fa-star star4"></span>
+            <span class="fa fa-star star5"></span>
+        </div>
 
         <br><br>
+        <h2>Reviews</h2>
+        <div id="reviews"></div>
 
-        <label>Review:</label>
-        <textarea id="review-text"></textarea>
-
-        <button onclick="addReview()">Submit Review</button>
-    </div>
-
-    <div class="stars">
-        <span class="fa fa-star star1"></span>
-        <span class="fa fa-star star2"></span>
-        <span class="fa fa-star star3"></span>
-        <span class="fa fa-star star4"></span>
-        <span class="fa fa-star star5"></span>
-    </div>
-
-    <br><br>
-    <h2>Reviews</h2>
-    <div id="reviews"></div>
-
-    <script src="js/reviews.js"></script>
+        <script src="js/reviews.js"></script>
+</div>
 
 </body>
 </html>
