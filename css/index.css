@@ -8,7 +8,7 @@
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     float: right;
     width: 255px;
-    height: 500px;
+    height: 860px;
     padding-left: 30px;
     border-left: 2px solid rgb(222, 180, 150);
     padding-right: 10px;
@@ -17,13 +17,21 @@
     background-color: #f7e6dd;
 }
 
+#sidebarpic img {
+    padding-top: 25px;
+    width: 100%;
+    max-width: 250px;
+    display: block;
+    margin: 0 auto;
+}
+
 #container
 {
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 18px;
     padding: 20px;
     border: 1px solid rgb(222, 180, 150);
-    background-color:rgb(253, 249, 247)
+    background-color:rgb(253, 249, 247);
 }
 #navbar
 {
@@ -39,17 +47,6 @@
     width: auto;
 }*/
 
-#promotionpic
-{
-    float: right;
-    padding-right: 5px;
-}
-
-#promotiontext
-{
-    float: left;
-    width: 50%;
-}
 
 /*.header img
 {
@@ -127,16 +124,16 @@
 .txtbutton {
 
     border: 1px solid gray;
-    border-radius: 5px;
-    padding: 2px;
-    color: black;
+    border-radius: 8px;
+    padding: 5px;
+    border: 1px solid rgb(130, 62, 20);
+    background-color: #dfc7ba;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     text-align: center;
     display: inline-block;
-    font-size: 16px;
-    margin-bottom: 8px;
+    font-size: 20px;
+    margin-bottom: 10px;
     cursor: pointer;
-    background: rgb(253, 249, 247);
 }
 
 .CartButton {
@@ -152,6 +149,63 @@
     cursor: pointer;
 }
 
+#welcomepic img{
+    width: 100%;
+    max-width: 350px;
+    display: block;
+    margin: 0 auto;
+}
 
+#promotion {
+    padding: 20px;
+    border-radius: 12px;
+    background: #fff;
+    border: 1px solid black;
+    flex: 1;
+    display: grid;
+    grid-template-columns: 1fr auto; 
+    grid-template-rows: auto auto;     
+    gap: 20px;
+}
 
+#promotiontext {
+    grid-column: 1;
+    grid-row: 1; 
+}
 
+#promotionpic {
+    grid-column: 2;
+    grid-row: 1;
+    padding-top: 25px;
+    padding-right: 25px;
+}
+
+#promotionpic img{
+    width: 100%;
+    max-width: 350px;
+    border-radius: 8px;
+}
+
+#allergens {
+    padding: 20px;
+    margin-bottom: 25px;
+    border-radius: 12px;
+}
+
+h1 {
+    font-size: 60px;
+    color: rgb(57, 28, 9);
+    text-shadow: 1px 1px 2px rgb(62, 29, 9);
+}
+
+h2 {
+    font-size: 50px;
+}
+
+h3{
+    font-size: 30px;
+}
+
+#welcome {
+    float: left;
+}
