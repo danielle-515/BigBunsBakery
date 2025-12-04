@@ -29,26 +29,28 @@
 
 <div id="container">
     <h1>User Reviews</h1>
-        <div id="user-review-form">
-            <h3>Leave a Review!</h3>
+        <div id="reviewcontainer">
+            <div id="user-review-form">
+                <h3>Leave a Review!</h3>
 
-            <label>Name:</label> <br>
-            <input type="text" id="name">
+                <label>Name:</label> <br>
+                <input type="text" id="name">
 
-            <br><br>
+                <br><br>
 
-            <label>Review:</label> <br>
-            <textarea id="review-text"></textarea>
+                <label>Review:</label> <br>
+                <textarea id="review-text"></textarea>
+            </div>
+
+            <div class="stars">
+                <span class="fa fa-star star" data-value="1"></span>
+                <span class="fa fa-star star" data-value="2"></span>
+                <span class="fa fa-star star" data-value="3"></span>
+                <span class="fa fa-star star" data-value="4"></span>
+                <span class="fa fa-star star" data-value="5"></span>
+            </div>
 
             <br><button onclick="addReview()">Submit Review</button>
-        </div>
-
-        <div class="stars">
-            <span class="fa fa-star star" data-value="1"></span>
-            <span class="fa fa-star star" data-value="2"></span>
-            <span class="fa fa-star star" data-value="3"></span>
-            <span class="fa fa-star star" data-value="4"></span>
-            <span class="fa fa-star star" data-value="5"></span>
         </div>
 
         <br><br>
