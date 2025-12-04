@@ -1,75 +1,63 @@
-let rating = 0;
-//get stars from html
-const stars = Array.from(document.querySelectorAll('.star'));
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" 
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style type="text/css" media="all">@import "css/reviewpage.css";</style>
+    <title>BigBunsBakery</title>
+</head>
 
-function updateStars() {
-    stars.forEach((s, i) => {
-        s.classList.toggle("active", i < rating) //highlight all previous stars
-    });
-}
+<body>
 
-function setRating(value) {
-    rating = value;
-    updateStars();
-}
+<div id = "header">
+    <img src = pictures/bbbakery_banner.png alt = "banner" width=" 100%" class = "center" />
+</div>    
 
-function previewRating(value){
-    stars.forEach((s, i) => s.classList.toggle('active', i < value));
-}
-//only for hovering
+<div id = "navbar">
+    <button class="button" onclick = "document.location = 'index.html' " >Home</button>
 
+    <button class= "button" onclick = "document.location = 'menu.html' " >Menu </button>
 
-stars.forEach((s) => {
-    const val = Number(s.dataset.value);
-    s.addEventListener('mouseenter', () => previewRating(val));
-    s.addEventListener('mouseleave', () => updateStars());
-    //highlight and unhighlight
-    s.addEventListener('click', () => setRating(val));
-});
+    <button class = "button" onclick = "document.location = 'aboutUs.html' ">About Us</button>
 
+   <button class="button" onclick = "document.location = 'cart.html' "> 
+        <img src = "pictures/cart.png" alt = "cart" width = "25" />
+    </button>
+</div>
 
-function displayReviews() {
-    let reviews = JSON.parse(localStorage.getItem("reviews")) || [];
-    let container = document.getElementById("reviews");
-    container.innerHTML = " ";
-    
-    reviews.forEach(r => {
-        let htmlstars = "";
-        for(let i = 1; i < 6; i++){
-            htmlstars += `<span class="star ${i <= r.rating ? "active" : ""}"></span>`;
-        }
+<div id="container">
+    <h1>User Reviews</h1>
+        <div id="user-review-form">
+            <h3>Leave a Review!</h3>
 
+            <label>Name:</label> <br>
+            <input type="text" id="name">
 
-        container.innerHTML += `
-            <div class="review">
-                <strong>${r.name}</strong>
-                <div class="stars-display">
-                    ${htmlstars}
-                </div>
-                <p>${r.text}</p>
-            </div>`;
-    });
-    //thanks chatgpt for this one
-}
+            <br><br>
 
-function addReview() {
-    let name = document.getElementById("name").value;
-    let text = document.getElementById("review-text").value;
+            <label>Review:</label> <br>
+            <textarea id="review-text"></textarea>
 
-    //null case
-    if ((name === "") || (text === "")) { 
-        alert("Fill out both fields.");
-        return;
-    }
+            <br><button onclick="addReview()">Submit Review</button>
+        </div>
 
-    let reviews = JSON.parse(localStorage.getItem("reviews")) || [];
-    reviews.push({name, text, rating});
+        <div class="stars">
+            <span class="fa fa-star star" data-value="1"></span>
+            <span class="fa fa-star star" data-value="2"></span>
+            <span class="fa fa-star star" data-value="3"></span>
+            <span class="fa fa-star star" data-value="4"></span>
+            <span class="fa fa-star star" data-value="5"></span>
+        </div>
 
-    localStorage.setItem("reviews", JSON.stringify(reviews));
+        <br><br>
+        <h2>Reviews</h2>
+        <div id="reviews"></div>
 
-    rating = 0;
-    updateStars();
-    displayReviews();
-}
+        <script src="js/reviews.js"></script>
+</div>
 
-displayReviews();
+</body>
+</html>
+
