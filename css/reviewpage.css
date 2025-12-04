@@ -23,18 +23,19 @@
 }
 
 .stars {
-    float: left;
     display: flex;
-    flex-direction: row-reverse;
+    flex-direction: row;
 }
 
-.fa-star{
+
+.star::before{
+    font-family: FontAwesome;
+    content: "\f005";
     color: black;
     font-size: 24px;
 }
 
-.fa-star:hover,
-.fa-star:hover ~ .fa-star {
+.star.active::before {
     color: gold;
 }
 
